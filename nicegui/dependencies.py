@@ -147,7 +147,11 @@ def generate_resources(prefix: str, elements: Iterable[Element]) -> Tuple[List[s
             js_component = element.component
             if js_component.key not in done_components and js_component.path.suffix.lower() == '.js':
                 url = f'{prefix}/_nicegui/{__version__}/components/{js_component.key}'
-                js_imports.append(f'import {{ default as {js_component.name} }} from "{url}";')
-                js_imports.append(f'app.component("{js_component.tag}", {js_component.name});')
+                js_imports.extend(
+                    (
+                        f'import {{ default as {js_component.name} }} from "{url}";',
+                        f'app.component("{js_component.tag}", {js_component.name});',
+                    )
+                )
                 done_components.add(js_component.key)
     return vue_html, vue_styles, vue_scripts, imports, js_imports

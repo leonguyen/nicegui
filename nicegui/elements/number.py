@@ -92,18 +92,14 @@ class Number(ValidationElement, DisableableElement):
         self.set_value(float(self.format % value) if self.format else value)
 
     def _event_args_to_value(self, e: GenericEventArguments) -> Any:
-        if not e.args:
-            return None
-        return float(e.args)
+        return None if not e.args else float(e.args)
 
     def _value_to_model_value(self, value: Any) -> Any:
         if value is None:
             return None
         if self.format is None:
             return str(value)
-        if value == '':
-            return 0
-        return self.format % float(value)
+        return 0 if value == '' else self.format % float(value)
 
     def _value_to_event_value(self, value: Any) -> Any:
         return float(value) if value else 0

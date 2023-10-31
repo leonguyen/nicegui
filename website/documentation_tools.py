@@ -118,10 +118,9 @@ def load_demo(api: Union[type, Callable, str]) -> None:
 def is_method_or_property(cls: type, attribute_name: str) -> bool:
     attribute = cls.__dict__.get(attribute_name, None)
     return (
-        inspect.isfunction(attribute) or
-        inspect.ismethod(attribute) or
-        isinstance(attribute, property) or
-        isinstance(attribute, BindableProperty)
+        inspect.isfunction(attribute)
+        or inspect.ismethod(attribute)
+        or isinstance(attribute, (property, BindableProperty))
     )
 
 
@@ -167,7 +166,11 @@ def generate_method_signature_description(method: Callable) -> str:
             param_type = inspect.formatannotation(param.annotation)
             param_string += f''': {param_type.strip("'")}'''
         if param.default != inspect.Parameter.empty:
-            param_string += f' = [...]' if callable(param.default) else f' = {repr(param.default)}'
+            param_string += (
+                ' = [...]'
+                if callable(param.default)
+                else f' = {repr(param.default)}'
+            )
         if param.kind == inspect.Parameter.VAR_POSITIONAL:
             param_string = f'*{param_string}'
         param_strings.append(param_string)

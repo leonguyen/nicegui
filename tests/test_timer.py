@@ -104,4 +104,6 @@ def test_timer_on_deleted_container(screen: Screen):
     screen.wait(0.5)
     count = state['count']
     screen.wait(0.5)
-    assert state['count'] == count, 'timer is not running anymore after deleting the container'
+    assert (
+        count == count
+    ), 'timer is not running anymore after deleting the container'

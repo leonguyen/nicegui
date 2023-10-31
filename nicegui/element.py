@@ -91,8 +91,7 @@ class Element(Visibility):
 
         self.client.elements[self.id] = self
         self.parent_slot: Optional[Slot] = None
-        slot_stack = context.get_slot_stack()
-        if slot_stack:
+        if slot_stack := context.get_slot_stack():
             self.parent_slot = slot_stack[-1]
             self.parent_slot.children.append(self)
 
@@ -157,8 +156,7 @@ class Element(Visibility):
 
     def __iter__(self) -> Iterator[Element]:
         for slot in self.slots.values():
-            for child in slot:
-                yield child
+            yield from slot
 
     def _collect_slot_dict(self) -> Dict[str, Any]:
         return {
@@ -244,8 +242,7 @@ class Element(Visibility):
     def _parse_style(text: Optional[str]) -> Dict[str, str]:
         result = {}
         for word in (text or '').split(';'):
-            word = word.strip()
-            if word:
+            if word := word.strip():
                 key, value = word.split(':', 1)
                 result[key.strip()] = value.strip()
         return result

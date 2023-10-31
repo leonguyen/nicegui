@@ -15,15 +15,11 @@ active_links: List[Tuple[Any, str, Any, str, Callable[[Any], Any]]] = []
 
 
 def _has_attribute(obj: Union[object, Mapping], name: str) -> Any:
-    if isinstance(obj, Mapping):
-        return name in obj
-    return hasattr(obj, name)
+    return name in obj if isinstance(obj, Mapping) else hasattr(obj, name)
 
 
 def _get_attribute(obj: Union[object, Mapping], name: str) -> Any:
-    if isinstance(obj, Mapping):
-        return obj[name]
-    return getattr(obj, name)
+    return obj[name] if isinstance(obj, Mapping) else getattr(obj, name)
 
 
 def _set_attribute(obj: Union[object, Mapping], name: str, value: Any) -> None:
@@ -129,14 +125,14 @@ class BindableProperty:
         self.name = name  # pylint: disable=attribute-defined-outside-init
 
     def __get__(self, owner: Any, _=None) -> Any:
-        return getattr(owner, '___' + self.name)
+        return getattr(owner, f'___{self.name}')
 
     def __set__(self, owner: Any, value: Any) -> None:
-        has_attr = hasattr(owner, '___' + self.name)
-        value_changed = has_attr and getattr(owner, '___' + self.name) != value
+        has_attr = hasattr(owner, f'___{self.name}')
+        value_changed = has_attr and getattr(owner, f'___{self.name}') != value
         if has_attr and not value_changed:
             return
-        setattr(owner, '___' + self.name, value)
+        setattr(owner, f'___{self.name}', value)
         bindable_properties[(id(owner), self.name)] = owner
         _propagate(owner, self.name)
         if value_changed and self._change_handler is not None:
