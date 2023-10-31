@@ -157,7 +157,7 @@ def test_throttling_variants(screen: Screen):
     screen.click('Trailing')
     value = 3
     screen.click('Trailing')
-    assert events == []  # pylint: disable=use-implicit-booleaness-not-comparison
+    assert not events
     screen.wait(1.1)
     assert events == [3]
 

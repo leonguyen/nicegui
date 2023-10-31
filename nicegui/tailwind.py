@@ -205,7 +205,7 @@ class Tailwind:
 
     def aspect_ratio(self, value: AspectRatio) -> Tailwind:
         """Utilities for controlling the aspect ratio of an element."""
-        self.element.classes('aspect-' + value)
+        self.element.classes(f'aspect-{value}')
         return self
 
     def container(self) -> Tailwind:
@@ -215,790 +215,794 @@ class Tailwind:
 
     def columns(self, value: Columns) -> Tailwind:
         """Utilities for controlling the number of columns within an element."""
-        self.element.classes('columns-' + value)
+        self.element.classes(f'columns-{value}')
         return self
 
     def break_after(self, value: BreakAfter) -> Tailwind:
         """Utilities for controlling how a column or page should break after an element."""
-        self.element.classes('break-after-' + value)
+        self.element.classes(f'break-after-{value}')
         return self
 
     def break_before(self, value: BreakBefore) -> Tailwind:
         """Utilities for controlling how a column or page should break before an element."""
-        self.element.classes('break-before-' + value)
+        self.element.classes(f'break-before-{value}')
         return self
 
     def break_inside(self, value: BreakInside) -> Tailwind:
         """Utilities for controlling how a column or page should break within an element."""
-        self.element.classes('break-inside-' + value)
+        self.element.classes(f'break-inside-{value}')
         return self
 
     def box_decoration_break(self, value: BoxDecorationBreak) -> Tailwind:
         """Utilities for controlling how element fragments should be rendered across multiple lines, columns, or pages."""
-        self.element.classes('box-decoration-' + value)
+        self.element.classes(f'box-decoration-{value}')
         return self
 
     def box_sizing(self, value: BoxSizing) -> Tailwind:
         """Utilities for controlling how the browser should calculate an element's total size."""
-        self.element.classes('box-' + value)
+        self.element.classes(f'box-{value}')
         return self
 
     def display(self, value: Display) -> Tailwind:
         """Utilities for controlling the display box type of an element."""
-        self.element.classes('' + value)
+        self.element.classes(f'{value}')
         return self
 
     def floats(self, value: Floats) -> Tailwind:
         """Utilities for controlling the wrapping of content around an element."""
-        self.element.classes('float-' + value)
+        self.element.classes(f'float-{value}')
         return self
 
     def clear(self, value: Clear) -> Tailwind:
         """Utilities for controlling the wrapping of content around an element."""
-        self.element.classes('clear-' + value)
+        self.element.classes(f'clear-{value}')
         return self
 
     def isolation(self, value: Isolation) -> Tailwind:
         """Utilities for controlling whether an element should explicitly create a new stacking context."""
-        self.element.classes('' + value)
+        self.element.classes(f'{value}')
         return self
 
     def object_fit(self, value: ObjectFit) -> Tailwind:
         """Utilities for controlling how a replaced element's content should be resized."""
-        self.element.classes('object-' + value)
+        self.element.classes(f'object-{value}')
         return self
 
     def object_position(self, value: ObjectPosition) -> Tailwind:
         """Utilities for controlling how a replaced element's content should be positioned within its container."""
-        self.element.classes('object-' + value)
+        self.element.classes(f'object-{value}')
         return self
 
     def overflow(self, value: Overflow) -> Tailwind:
         """Utilities for controlling how an element handles content that is too large for the container."""
-        self.element.classes('overflow-' + value)
+        self.element.classes(f'overflow-{value}')
         return self
 
     def overscroll_behavior(self, value: OverscrollBehavior) -> Tailwind:
         """Utilities for controlling how the browser behaves when reaching the boundary of a scrolling area."""
-        self.element.classes('overscroll-' + value)
+        self.element.classes(f'overscroll-{value}')
         return self
 
     def position(self, value: Position) -> Tailwind:
         """Utilities for controlling how an element is positioned in the DOM."""
-        self.element.classes('' + value)
+        self.element.classes(f'{value}')
         return self
 
     def top_right_bottom_left(self, value: TopRightBottomLeft) -> Tailwind:
         """Utilities for controlling the placement of positioned elements."""
-        self.element.classes('' + value)
+        self.element.classes(f'{value}')
         return self
 
     def visibility(self, value: Visibility) -> Tailwind:
         """Utilities for controlling the visibility of an element."""
-        self.element.classes('' + value)
+        self.element.classes(f'{value}')
         return self
 
     def z_index(self, value: ZIndex) -> Tailwind:
         """Utilities for controlling the stack order of an element."""
-        self.element.classes('z-' + value)
+        self.element.classes(f'z-{value}')
         return self
 
     def flex_basis(self, value: FlexBasis) -> Tailwind:
         """Utilities for controlling the initial size of flex items."""
-        self.element.classes('basis-' + value)
+        self.element.classes(f'basis-{value}')
         return self
 
     def flex_direction(self, value: FlexDirection) -> Tailwind:
         """Utilities for controlling the direction of flex items."""
-        self.element.classes('flex-' + value)
+        self.element.classes(f'flex-{value}')
         return self
 
     def flex_wrap(self, value: FlexWrap) -> Tailwind:
         """Utilities for controlling how flex items wrap."""
-        self.element.classes('flex-' + value)
+        self.element.classes(f'flex-{value}')
         return self
 
     def flex(self, value: Flex) -> Tailwind:
         """Utilities for controlling how flex items both grow and shrink."""
-        self.element.classes('flex-' + value)
+        self.element.classes(f'flex-{value}')
         return self
 
     def flex_grow(self, value: FlexGrow) -> Tailwind:
         """Utilities for controlling how flex items grow."""
-        self.element.classes('grow-' + value if value else 'grow')
+        self.element.classes(f'grow-{value}' if value else 'grow')
         return self
 
     def flex_shrink(self, value: FlexShrink) -> Tailwind:
         """Utilities for controlling how flex items shrink."""
-        self.element.classes('shrink-' + value if value else 'shrink')
+        self.element.classes(f'shrink-{value}' if value else 'shrink')
         return self
 
     def order(self, value: Order) -> Tailwind:
         """Utilities for controlling the order of flex and grid items."""
-        self.element.classes('order-' + value)
+        self.element.classes(f'order-{value}')
         return self
 
     def grid_template_columns(self, value: GridTemplateColumns) -> Tailwind:
         """Utilities for specifying the columns in a grid layout."""
-        self.element.classes('grid-cols-' + value)
+        self.element.classes(f'grid-cols-{value}')
         return self
 
     def grid_column_start_end(self, value: GridColumnStartEnd) -> Tailwind:
         """Utilities for controlling how elements are sized and placed across grid columns."""
-        self.element.classes('col-' + value)
+        self.element.classes(f'col-{value}')
         return self
 
     def grid_template_rows(self, value: GridTemplateRows) -> Tailwind:
         """Utilities for specifying the rows in a grid layout."""
-        self.element.classes('grid-rows-' + value)
+        self.element.classes(f'grid-rows-{value}')
         return self
 
     def grid_row_start_end(self, value: GridRowStartEnd) -> Tailwind:
         """Utilities for controlling how elements are sized and placed across grid rows."""
-        self.element.classes('row-' + value)
+        self.element.classes(f'row-{value}')
         return self
 
     def grid_auto_flow(self, value: GridAutoFlow) -> Tailwind:
         """Utilities for controlling how elements in a grid are auto-placed."""
-        self.element.classes('grid-flow-' + value)
+        self.element.classes(f'grid-flow-{value}')
         return self
 
     def grid_auto_columns(self, value: GridAutoColumns) -> Tailwind:
         """Utilities for controlling the size of implicitly-created grid columns."""
-        self.element.classes('auto-cols-' + value)
+        self.element.classes(f'auto-cols-{value}')
         return self
 
     def grid_auto_rows(self, value: GridAutoRows) -> Tailwind:
         """Utilities for controlling the size of implicitly-created grid rows."""
-        self.element.classes('auto-rows-' + value)
+        self.element.classes(f'auto-rows-{value}')
         return self
 
     def gap(self, value: Gap) -> Tailwind:
         """Utilities for controlling gutters between grid and flexbox items."""
-        self.element.classes('gap-' + value)
+        self.element.classes(f'gap-{value}')
         return self
 
     def justify_content(self, value: JustifyContent) -> Tailwind:
         """Utilities for controlling how flex and grid items are positioned along a container's main axis."""
-        self.element.classes('justify-' + value)
+        self.element.classes(f'justify-{value}')
         return self
 
     def justify_items(self, value: JustifyItems) -> Tailwind:
         """Utilities for controlling how grid items are aligned along their inline axis."""
-        self.element.classes('justify-items-' + value)
+        self.element.classes(f'justify-items-{value}')
         return self
 
     def justify_self(self, value: JustifySelf) -> Tailwind:
         """Utilities for controlling how an individual grid item is aligned along its inline axis."""
-        self.element.classes('justify-self-' + value)
+        self.element.classes(f'justify-self-{value}')
         return self
 
     def align_content(self, value: AlignContent) -> Tailwind:
         """Utilities for controlling how rows are positioned in multi-row flex and grid containers."""
-        self.element.classes('content-' + value)
+        self.element.classes(f'content-{value}')
         return self
 
     def align_items(self, value: AlignItems) -> Tailwind:
         """Utilities for controlling how flex and grid items are positioned along a container's cross axis."""
-        self.element.classes('items-' + value)
+        self.element.classes(f'items-{value}')
         return self
 
     def align_self(self, value: AlignSelf) -> Tailwind:
         """Utilities for controlling how an individual flex or grid item is positioned along its container's cross axis."""
-        self.element.classes('self-' + value)
+        self.element.classes(f'self-{value}')
         return self
 
     def place_content(self, value: PlaceContent) -> Tailwind:
         """Utilities for controlling how content is justified and aligned at the same time."""
-        self.element.classes('place-content-' + value)
+        self.element.classes(f'place-content-{value}')
         return self
 
     def place_items(self, value: PlaceItems) -> Tailwind:
         """Utilities for controlling how items are justified and aligned at the same time."""
-        self.element.classes('place-items-' + value)
+        self.element.classes(f'place-items-{value}')
         return self
 
     def place_self(self, value: PlaceSelf) -> Tailwind:
         """Utilities for controlling how an individual item is justified and aligned at the same time."""
-        self.element.classes('place-self-' + value)
+        self.element.classes(f'place-self-{value}')
         return self
 
     def padding(self, value: Padding) -> Tailwind:
         """Utilities for controlling an element's padding."""
-        self.element.classes('' + value)
+        self.element.classes(f'{value}')
         return self
 
     def margin(self, value: Margin) -> Tailwind:
         """Utilities for controlling an element's margin."""
-        self.element.classes('' + value)
+        self.element.classes(f'{value}')
         return self
 
     def space_between(self, value: SpaceBetween) -> Tailwind:
         """Utilities for controlling the space between child elements."""
-        self.element.classes('space-' + value)
+        self.element.classes(f'space-{value}')
         return self
 
     def width(self, value: Width) -> Tailwind:
         """Utilities for setting the width of an element."""
-        self.element.classes('w-' + value)
+        self.element.classes(f'w-{value}')
         return self
 
     def min_width(self, value: MinWidth) -> Tailwind:
         """Utilities for setting the minimum width of an element."""
-        self.element.classes('min-w-' + value)
+        self.element.classes(f'min-w-{value}')
         return self
 
     def max_width(self, value: MaxWidth) -> Tailwind:
         """Utilities for setting the maximum width of an element."""
-        self.element.classes('max-w-' + value)
+        self.element.classes(f'max-w-{value}')
         return self
 
     def height(self, value: Height) -> Tailwind:
         """Utilities for setting the height of an element."""
-        self.element.classes('h-' + value)
+        self.element.classes(f'h-{value}')
         return self
 
     def min_height(self, value: MinHeight) -> Tailwind:
         """Utilities for setting the minimum height of an element."""
-        self.element.classes('min-h-' + value)
+        self.element.classes(f'min-h-{value}')
         return self
 
     def max_height(self, value: MaxHeight) -> Tailwind:
         """Utilities for setting the maximum height of an element."""
-        self.element.classes('max-h-' + value)
+        self.element.classes(f'max-h-{value}')
         return self
 
     def font_family(self, value: FontFamily) -> Tailwind:
         """Utilities for controlling the font family of an element."""
-        self.element.classes('font-' + value)
+        self.element.classes(f'font-{value}')
         return self
 
     def font_size(self, value: FontSize) -> Tailwind:
         """Utilities for controlling the font size of an element."""
-        self.element.classes('text-' + value)
+        self.element.classes(f'text-{value}')
         return self
 
     def font_smoothing(self, value: FontSmoothing) -> Tailwind:
         """Utilities for controlling the font smoothing of an element."""
-        self.element.classes('' + value)
+        self.element.classes(f'{value}')
         return self
 
     def font_style(self, value: FontStyle) -> Tailwind:
         """Utilities for controlling the style of text."""
-        self.element.classes('' + value)
+        self.element.classes(f'{value}')
         return self
 
     def font_weight(self, value: FontWeight) -> Tailwind:
         """Utilities for controlling the font weight of an element."""
-        self.element.classes('font-' + value)
+        self.element.classes(f'font-{value}')
         return self
 
     def font_variant_numeric(self, value: FontVariantNumeric) -> Tailwind:
         """Utilities for controlling the variant of numbers."""
-        self.element.classes('' + value)
+        self.element.classes(f'{value}')
         return self
 
     def letter_spacing(self, value: LetterSpacing) -> Tailwind:
         """Utilities for controlling the tracking (letter spacing) of an element."""
-        self.element.classes('tracking-' + value)
+        self.element.classes(f'tracking-{value}')
         return self
 
     def line_clamp(self, value: LineClamp) -> Tailwind:
         """Utilities for clamping text to a specific number of lines."""
-        self.element.classes('line-clamp-' + value)
+        self.element.classes(f'line-clamp-{value}')
         return self
 
     def line_height(self, value: LineHeight) -> Tailwind:
         """Utilities for controlling the leading (line height) of an element."""
-        self.element.classes('leading-' + value)
+        self.element.classes(f'leading-{value}')
         return self
 
     def list_style_image(self, value: ListStyleImage) -> Tailwind:
         """Utilities for controlling the marker images for list items."""
-        self.element.classes('list-image' + value)
+        self.element.classes(f'list-image{value}')
         return self
 
     def list_style_position(self, value: ListStylePosition) -> Tailwind:
         """Utilities for controlling the position of bullets/numbers in lists."""
-        self.element.classes('list-' + value)
+        self.element.classes(f'list-{value}')
         return self
 
     def list_style_type(self, value: ListStyleType) -> Tailwind:
         """Utilities for controlling the bullet/number style of a list."""
-        self.element.classes('list-' + value)
+        self.element.classes(f'list-{value}')
         return self
 
     def text_align(self, value: TextAlign) -> Tailwind:
         """Utilities for controlling the alignment of text."""
-        self.element.classes('text-' + value)
+        self.element.classes(f'text-{value}')
         return self
 
     def text_color(self, value: TextColor) -> Tailwind:
         """Utilities for controlling the text color of an element."""
-        self.element.classes('text-' + value)
+        self.element.classes(f'text-{value}')
         return self
 
     def text_decoration(self, value: TextDecoration) -> Tailwind:
         """Utilities for controlling the decoration of text."""
-        self.element.classes('' + value)
+        self.element.classes(f'{value}')
         return self
 
     def text_decoration_color(self, value: TextDecorationColor) -> Tailwind:
         """Utilities for controlling the color of text decorations."""
-        self.element.classes('decoration-' + value)
+        self.element.classes(f'decoration-{value}')
         return self
 
     def text_decoration_style(self, value: TextDecorationStyle) -> Tailwind:
         """Utilities for controlling the style of text decorations."""
-        self.element.classes('decoration-' + value)
+        self.element.classes(f'decoration-{value}')
         return self
 
     def text_decoration_thickness(self, value: TextDecorationThickness) -> Tailwind:
         """Utilities for controlling the thickness of text decorations."""
-        self.element.classes('decoration-' + value)
+        self.element.classes(f'decoration-{value}')
         return self
 
     def text_underline_offset(self, value: TextUnderlineOffset) -> Tailwind:
         """Utilities for controlling the offset of a text underline."""
-        self.element.classes('underline-offset-' + value)
+        self.element.classes(f'underline-offset-{value}')
         return self
 
     def text_transform(self, value: TextTransform) -> Tailwind:
         """Utilities for controlling the transformation of text."""
-        self.element.classes('' + value)
+        self.element.classes(f'{value}')
         return self
 
     def text_overflow(self, value: TextOverflow) -> Tailwind:
         """Utilities for controlling text overflow in an element."""
-        self.element.classes('' + value)
+        self.element.classes(f'{value}')
         return self
 
     def text_indent(self, value: TextIndent) -> Tailwind:
         """Utilities for controlling the amount of empty space shown before text in a block."""
-        self.element.classes('indent-' + value)
+        self.element.classes(f'indent-{value}')
         return self
 
     def vertical_align(self, value: VerticalAlign) -> Tailwind:
         """Utilities for controlling the vertical alignment of an inline or table-cell box."""
-        self.element.classes('align-' + value)
+        self.element.classes(f'align-{value}')
         return self
 
     def whitespace(self, value: Whitespace) -> Tailwind:
         """Utilities for controlling an element's white-space property."""
-        self.element.classes('whitespace-' + value)
+        self.element.classes(f'whitespace-{value}')
         return self
 
     def word_break(self, value: WordBreak) -> Tailwind:
         """Utilities for controlling word breaks in an element."""
-        self.element.classes('break-' + value)
+        self.element.classes(f'break-{value}')
         return self
 
     def hyphens(self, value: Hyphens) -> Tailwind:
         """Utilities for controlling how words should be hyphenated."""
-        self.element.classes('hyphens-' + value)
+        self.element.classes(f'hyphens-{value}')
         return self
 
     def content(self, value: Content) -> Tailwind:
         """Utilities for controlling the content of the before and after pseudo-elements."""
-        self.element.classes('content' + value)
+        self.element.classes(f'content{value}')
         return self
 
     def background_attachment(self, value: BackgroundAttachment) -> Tailwind:
         """Utilities for controlling how a background image behaves when scrolling."""
-        self.element.classes('bg-' + value)
+        self.element.classes(f'bg-{value}')
         return self
 
     def background_clip(self, value: BackgroundClip) -> Tailwind:
         """Utilities for controlling the bounding box of an element's background."""
-        self.element.classes('bg-clip-' + value)
+        self.element.classes(f'bg-clip-{value}')
         return self
 
     def background_color(self, value: BackgroundColor) -> Tailwind:
         """Utilities for controlling an element's background color."""
-        self.element.classes('bg-' + value)
+        self.element.classes(f'bg-{value}')
         return self
 
     def background_origin(self, value: BackgroundOrigin) -> Tailwind:
         """Utilities for controlling how an element's background is positioned relative to borders, padding, and content."""
-        self.element.classes('bg-origin-' + value)
+        self.element.classes(f'bg-origin-{value}')
         return self
 
     def background_position(self, value: BackgroundPosition) -> Tailwind:
         """Utilities for controlling the position of an element's background image."""
-        self.element.classes('bg-' + value)
+        self.element.classes(f'bg-{value}')
         return self
 
     def background_repeat(self, value: BackgroundRepeat) -> Tailwind:
         """Utilities for controlling the repetition of an element's background image."""
-        self.element.classes('bg-' + value)
+        self.element.classes(f'bg-{value}')
         return self
 
     def background_size(self, value: BackgroundSize) -> Tailwind:
         """Utilities for controlling the background size of an element's background image."""
-        self.element.classes('bg-' + value)
+        self.element.classes(f'bg-{value}')
         return self
 
     def background_image(self, value: BackgroundImage) -> Tailwind:
         """Utilities for controlling an element's background image."""
-        self.element.classes('bg-' + value)
+        self.element.classes(f'bg-{value}')
         return self
 
     def gradient_color_stops(self, value: GradientColorStops) -> Tailwind:
         """Utilities for controlling the color stops in background gradients."""
-        self.element.classes('' + value)
+        self.element.classes(f'{value}')
         return self
 
     def border_radius(self, value: BorderRadius) -> Tailwind:
         """Utilities for controlling the border radius of an element."""
-        self.element.classes('rounded-' + value if value else 'rounded')
+        self.element.classes(f'rounded-{value}' if value else 'rounded')
         return self
 
     def border_width(self, value: BorderWidth) -> Tailwind:
         """Utilities for controlling the width of an element's borders."""
-        self.element.classes('border-' + value if value else 'border')
+        self.element.classes(f'border-{value}' if value else 'border')
         return self
 
     def border_color(self, value: BorderColor) -> Tailwind:
         """Utilities for controlling the color of an element's borders."""
-        self.element.classes('border-' + value)
+        self.element.classes(f'border-{value}')
         return self
 
     def border_style(self, value: BorderStyle) -> Tailwind:
         """Utilities for controlling the style of an element's borders."""
-        self.element.classes('border-' + value)
+        self.element.classes(f'border-{value}')
         return self
 
     def divide_width(self, value: DivideWidth) -> Tailwind:
         """Utilities for controlling the border width between elements."""
-        self.element.classes('divide-' + value)
+        self.element.classes(f'divide-{value}')
         return self
 
     def divide_color(self, value: DivideColor) -> Tailwind:
         """Utilities for controlling the border color between elements."""
-        self.element.classes('divide-' + value)
+        self.element.classes(f'divide-{value}')
         return self
 
     def divide_style(self, value: DivideStyle) -> Tailwind:
         """Utilities for controlling the border style between elements."""
-        self.element.classes('divide-' + value)
+        self.element.classes(f'divide-{value}')
         return self
 
     def outline_width(self, value: OutlineWidth) -> Tailwind:
         """Utilities for controlling the width of an element's outline."""
-        self.element.classes('outline-' + value)
+        self.element.classes(f'outline-{value}')
         return self
 
     def outline_color(self, value: OutlineColor) -> Tailwind:
         """Utilities for controlling the color of an element's outline."""
-        self.element.classes('outline-' + value)
+        self.element.classes(f'outline-{value}')
         return self
 
     def outline_style(self, value: OutlineStyle) -> Tailwind:
         """Utilities for controlling the style of an element's outline."""
-        self.element.classes('outline-' + value if value else 'outline')
+        self.element.classes(f'outline-{value}' if value else 'outline')
         return self
 
     def outline_offset(self, value: OutlineOffset) -> Tailwind:
         """Utilities for controlling the offset of an element's outline."""
-        self.element.classes('outline-offset-' + value)
+        self.element.classes(f'outline-offset-{value}')
         return self
 
     def ring_width(self, value: RingWidth) -> Tailwind:
         """Utilities for creating outline rings with box-shadows."""
-        self.element.classes('ring-' + value if value else 'ring')
+        self.element.classes(f'ring-{value}' if value else 'ring')
         return self
 
     def ring_color(self, value: RingColor) -> Tailwind:
         """Utilities for setting the color of outline rings."""
-        self.element.classes('ring-' + value)
+        self.element.classes(f'ring-{value}')
         return self
 
     def ring_offset_width(self, value: RingOffsetWidth) -> Tailwind:
         """Utilities for simulating an offset when adding outline rings."""
-        self.element.classes('ring-offset-' + value)
+        self.element.classes(f'ring-offset-{value}')
         return self
 
     def ring_offset_color(self, value: RingOffsetColor) -> Tailwind:
         """Utilities for setting the color of outline ring offsets."""
-        self.element.classes('ring-offset-' + value)
+        self.element.classes(f'ring-offset-{value}')
         return self
 
     def box_shadow(self, value: BoxShadow) -> Tailwind:
         """Utilities for controlling the box shadow of an element."""
-        self.element.classes('shadow-' + value if value else 'shadow')
+        self.element.classes(f'shadow-{value}' if value else 'shadow')
         return self
 
     def box_shadow_color(self, value: BoxShadowColor) -> Tailwind:
         """Utilities for controlling the color of a box shadow."""
-        self.element.classes('shadow-' + value)
+        self.element.classes(f'shadow-{value}')
         return self
 
     def opacity(self, value: Opacity) -> Tailwind:
         """Utilities for controlling the opacity of an element."""
-        self.element.classes('opacity-' + value)
+        self.element.classes(f'opacity-{value}')
         return self
 
     def mix_blend_mode(self, value: MixBlendMode) -> Tailwind:
         """Utilities for controlling how an element should blend with the background."""
-        self.element.classes('mix-blend-' + value)
+        self.element.classes(f'mix-blend-{value}')
         return self
 
     def background_blend_mode(self, value: BackgroundBlendMode) -> Tailwind:
         """Utilities for controlling how an element's background image should blend with its background color."""
-        self.element.classes('bg-blend-' + value)
+        self.element.classes(f'bg-blend-{value}')
         return self
 
     def blur(self, value: Blur) -> Tailwind:
         """Utilities for applying blur filters to an element."""
-        self.element.classes('blur-' + value if value else 'blur')
+        self.element.classes(f'blur-{value}' if value else 'blur')
         return self
 
     def brightness(self, value: Brightness) -> Tailwind:
         """Utilities for applying brightness filters to an element."""
-        self.element.classes('brightness-' + value)
+        self.element.classes(f'brightness-{value}')
         return self
 
     def contrast(self, value: Contrast) -> Tailwind:
         """Utilities for applying contrast filters to an element."""
-        self.element.classes('contrast-' + value)
+        self.element.classes(f'contrast-{value}')
         return self
 
     def drop_shadow(self, value: DropShadow) -> Tailwind:
         """Utilities for applying drop-shadow filters to an element."""
-        self.element.classes('drop-shadow-' + value if value else 'drop-shadow')
+        self.element.classes(f'drop-shadow-{value}' if value else 'drop-shadow')
         return self
 
     def grayscale(self, value: Grayscale) -> Tailwind:
         """Utilities for applying grayscale filters to an element."""
-        self.element.classes('grayscale-' + value if value else 'grayscale')
+        self.element.classes(f'grayscale-{value}' if value else 'grayscale')
         return self
 
     def hue_rotate(self, value: HueRotate) -> Tailwind:
         """Utilities for applying hue-rotate filters to an element."""
-        self.element.classes('hue-rotate-' + value)
+        self.element.classes(f'hue-rotate-{value}')
         return self
 
     def invert(self, value: Invert) -> Tailwind:
         """Utilities for applying invert filters to an element."""
-        self.element.classes('invert-' + value if value else 'invert')
+        self.element.classes(f'invert-{value}' if value else 'invert')
         return self
 
     def saturate(self, value: Saturate) -> Tailwind:
         """Utilities for applying saturation filters to an element."""
-        self.element.classes('saturate-' + value)
+        self.element.classes(f'saturate-{value}')
         return self
 
     def sepia(self, value: Sepia) -> Tailwind:
         """Utilities for applying sepia filters to an element."""
-        self.element.classes('sepia-' + value if value else 'sepia')
+        self.element.classes(f'sepia-{value}' if value else 'sepia')
         return self
 
     def backdrop_blur(self, value: BackdropBlur) -> Tailwind:
         """Utilities for applying backdrop blur filters to an element."""
-        self.element.classes('backdrop-blur-' + value if value else 'backdrop-blur')
+        self.element.classes(f'backdrop-blur-{value}' if value else 'backdrop-blur')
         return self
 
     def backdrop_brightness(self, value: BackdropBrightness) -> Tailwind:
         """Utilities for applying backdrop brightness filters to an element."""
-        self.element.classes('backdrop-brightness-' + value)
+        self.element.classes(f'backdrop-brightness-{value}')
         return self
 
     def backdrop_contrast(self, value: BackdropContrast) -> Tailwind:
         """Utilities for applying backdrop contrast filters to an element."""
-        self.element.classes('backdrop-contrast-' + value)
+        self.element.classes(f'backdrop-contrast-{value}')
         return self
 
     def backdrop_grayscale(self, value: BackdropGrayscale) -> Tailwind:
         """Utilities for applying backdrop grayscale filters to an element."""
-        self.element.classes('backdrop-grayscale-' + value if value else 'backdrop-grayscale')
+        self.element.classes(
+            f'backdrop-grayscale-{value}' if value else 'backdrop-grayscale'
+        )
         return self
 
     def backdrop_hue_rotate(self, value: BackdropHueRotate) -> Tailwind:
         """Utilities for applying backdrop hue-rotate filters to an element."""
-        self.element.classes('backdrop-hue-rotate-' + value)
+        self.element.classes(f'backdrop-hue-rotate-{value}')
         return self
 
     def backdrop_invert(self, value: BackdropInvert) -> Tailwind:
         """Utilities for applying backdrop invert filters to an element."""
-        self.element.classes('backdrop-invert-' + value if value else 'backdrop-invert')
+        self.element.classes(
+            f'backdrop-invert-{value}' if value else 'backdrop-invert'
+        )
         return self
 
     def backdrop_opacity(self, value: BackdropOpacity) -> Tailwind:
         """Utilities for applying backdrop opacity filters to an element."""
-        self.element.classes('backdrop-opacity-' + value)
+        self.element.classes(f'backdrop-opacity-{value}')
         return self
 
     def backdrop_saturate(self, value: BackdropSaturate) -> Tailwind:
         """Utilities for applying backdrop saturation filters to an element."""
-        self.element.classes('backdrop-saturate-' + value)
+        self.element.classes(f'backdrop-saturate-{value}')
         return self
 
     def backdrop_sepia(self, value: BackdropSepia) -> Tailwind:
         """Utilities for applying backdrop sepia filters to an element."""
-        self.element.classes('backdrop-sepia-' + value if value else 'backdrop-sepia')
+        self.element.classes(f'backdrop-sepia-{value}' if value else 'backdrop-sepia')
         return self
 
     def border_collapse(self, value: BorderCollapse) -> Tailwind:
         """Utilities for controlling whether table borders should collapse or be separated."""
-        self.element.classes('border-' + value)
+        self.element.classes(f'border-{value}')
         return self
 
     def border_spacing(self, value: BorderSpacing) -> Tailwind:
         """Utilities for controlling the spacing between table borders."""
-        self.element.classes('border-spacing-' + value)
+        self.element.classes(f'border-spacing-{value}')
         return self
 
     def table_layout(self, value: TableLayout) -> Tailwind:
         """Utilities for controlling the table layout algorithm."""
-        self.element.classes('table-' + value)
+        self.element.classes(f'table-{value}')
         return self
 
     def caption_side(self, value: CaptionSide) -> Tailwind:
         """Utilities for controlling the alignment of a caption element inside of a table."""
-        self.element.classes('caption-' + value)
+        self.element.classes(f'caption-{value}')
         return self
 
     def transition_property(self, value: TransitionProperty) -> Tailwind:
         """Utilities for controlling which CSS properties transition."""
-        self.element.classes('transition-' + value if value else 'transition')
+        self.element.classes(f'transition-{value}' if value else 'transition')
         return self
 
     def transition_duration(self, value: TransitionDuration) -> Tailwind:
         """Utilities for controlling the duration of CSS transitions."""
-        self.element.classes('duration-' + value)
+        self.element.classes(f'duration-{value}')
         return self
 
     def transition_timing_function(self, value: TransitionTimingFunction) -> Tailwind:
         """Utilities for controlling the easing of CSS transitions."""
-        self.element.classes('ease-' + value)
+        self.element.classes(f'ease-{value}')
         return self
 
     def transition_delay(self, value: TransitionDelay) -> Tailwind:
         """Utilities for controlling the delay of CSS transitions."""
-        self.element.classes('delay-' + value)
+        self.element.classes(f'delay-{value}')
         return self
 
     def animation(self, value: Animation) -> Tailwind:
         """Utilities for animating elements with CSS animations."""
-        self.element.classes('animate-' + value)
+        self.element.classes(f'animate-{value}')
         return self
 
     def scale(self, value: Scale) -> Tailwind:
         """Utilities for scaling elements with transform."""
-        self.element.classes('scale-' + value)
+        self.element.classes(f'scale-{value}')
         return self
 
     def rotate(self, value: Rotate) -> Tailwind:
         """Utilities for rotating elements with transform."""
-        self.element.classes('rotate-' + value)
+        self.element.classes(f'rotate-{value}')
         return self
 
     def translate(self, value: Translate) -> Tailwind:
         """Utilities for translating elements with transform."""
-        self.element.classes('translate-' + value)
+        self.element.classes(f'translate-{value}')
         return self
 
     def skew(self, value: Skew) -> Tailwind:
         """Utilities for skewing elements with transform."""
-        self.element.classes('skew-' + value)
+        self.element.classes(f'skew-{value}')
         return self
 
     def transform_origin(self, value: TransformOrigin) -> Tailwind:
         """Utilities for specifying the origin for an element's transformations."""
-        self.element.classes('origin-' + value)
+        self.element.classes(f'origin-{value}')
         return self
 
     def accent_color(self, value: AccentColor) -> Tailwind:
         """Utilities for controlling the accented color of a form control."""
-        self.element.classes('accent-' + value)
+        self.element.classes(f'accent-{value}')
         return self
 
     def appearance(self, value: Appearance) -> Tailwind:
         """Utilities for suppressing native form control styling."""
-        self.element.classes('appearance' + value)
+        self.element.classes(f'appearance{value}')
         return self
 
     def cursor(self, value: Cursor) -> Tailwind:
         """Utilities for controlling the cursor style when hovering over an element."""
-        self.element.classes('cursor-' + value)
+        self.element.classes(f'cursor-{value}')
         return self
 
     def caret_color(self, value: CaretColor) -> Tailwind:
         """Utilities for controlling the color of the text input cursor."""
-        self.element.classes('caret-' + value)
+        self.element.classes(f'caret-{value}')
         return self
 
     def pointer_events(self, value: PointerEvents) -> Tailwind:
         """Utilities for controlling whether an element responds to pointer events."""
-        self.element.classes('pointer-events-' + value)
+        self.element.classes(f'pointer-events-{value}')
         return self
 
     def resize(self, value: Resize) -> Tailwind:
         """Utilities for controlling how an element can be resized."""
-        self.element.classes('resize-' + value if value else 'resize')
+        self.element.classes(f'resize-{value}' if value else 'resize')
         return self
 
     def scroll_behavior(self, value: ScrollBehavior) -> Tailwind:
         """Utilities for controlling the scroll behavior of an element."""
-        self.element.classes('scroll-' + value)
+        self.element.classes(f'scroll-{value}')
         return self
 
     def scroll_margin(self, value: ScrollMargin) -> Tailwind:
         """Utilities for controlling the scroll offset around items in a snap container."""
-        self.element.classes('scroll-' + value)
+        self.element.classes(f'scroll-{value}')
         return self
 
     def scroll_padding(self, value: ScrollPadding) -> Tailwind:
         """Utilities for controlling an element's scroll offset within a snap container."""
-        self.element.classes('scroll-' + value)
+        self.element.classes(f'scroll-{value}')
         return self
 
     def scroll_snap_align(self, value: ScrollSnapAlign) -> Tailwind:
         """Utilities for controlling the scroll snap alignment of an element."""
-        self.element.classes('snap-' + value)
+        self.element.classes(f'snap-{value}')
         return self
 
     def scroll_snap_stop(self, value: ScrollSnapStop) -> Tailwind:
         """Utilities for controlling whether you can skip past possible snap positions."""
-        self.element.classes('snap-' + value)
+        self.element.classes(f'snap-{value}')
         return self
 
     def scroll_snap_type(self, value: ScrollSnapType) -> Tailwind:
         """Utilities for controlling how strictly snap points are enforced in a snap container."""
-        self.element.classes('snap-' + value)
+        self.element.classes(f'snap-{value}')
         return self
 
     def touch_action(self, value: TouchAction) -> Tailwind:
         """Utilities for controlling how an element can be scrolled and zoomed on touchscreens."""
-        self.element.classes('touch-' + value)
+        self.element.classes(f'touch-{value}')
         return self
 
     def user_select(self, value: UserSelect) -> Tailwind:
         """Utilities for controlling whether the user can select text in an element."""
-        self.element.classes('select-' + value)
+        self.element.classes(f'select-{value}')
         return self
 
     def will_change(self, value: WillChange) -> Tailwind:
         """Utilities for optimizing upcoming animations of elements that are expected to change."""
-        self.element.classes('will-change-' + value)
+        self.element.classes(f'will-change-{value}')
         return self
 
     def fill(self, value: Fill) -> Tailwind:
         """Utilities for styling the fill of SVG elements."""
-        self.element.classes('fill-' + value)
+        self.element.classes(f'fill-{value}')
         return self
 
     def stroke(self, value: Stroke) -> Tailwind:
         """Utilities for styling the stroke of SVG elements."""
-        self.element.classes('stroke-' + value)
+        self.element.classes(f'stroke-{value}')
         return self
 
     def stroke_width(self, value: StrokeWidth) -> Tailwind:
         """Utilities for styling the stroke width of SVG elements."""
-        self.element.classes('stroke-' + value)
+        self.element.classes(f'stroke-{value}')
         return self
 
     def screen_readers(self, value: ScreenReaders) -> Tailwind:
         """Utilities for improving accessibility with screen readers."""
-        self.element.classes('' + value)
+        self.element.classes(f'{value}')
         return self

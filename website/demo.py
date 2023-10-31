@@ -45,8 +45,9 @@ def demo(f: Callable) -> Callable:
         code = isort.code('\n'.join(code), no_sections=True, lines_after_imports=1)
         with python_window(classes='w-full max-w-[44rem]'):
             def copy_code():
-                ui.run_javascript('navigator.clipboard.writeText(`' + code + '`)')
+                ui.run_javascript(f'navigator.clipboard.writeText(`{code}`)')
                 ui.notify('Copied to clipboard', type='positive', color='primary')
+
             ui.markdown(f'````python\n{code}\n````')
             ui.icon('content_copy', size='xs') \
                 .classes('absolute right-2 top-10 opacity-10 hover:opacity-80 cursor-pointer') \

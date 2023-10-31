@@ -48,12 +48,13 @@ class NumpyJsonEncoder(json.JSONEncoder):
     """Special json encoder that supports NumPy arrays and date/datetime objects."""
 
     def default(self, o):
-        if has_numpy and isinstance(o, np.integer):
-            return int(o)
-        if has_numpy and isinstance(o, np.floating):
-            return float(o)
-        if has_numpy and isinstance(o, np.ndarray):
-            return o.tolist()
+        if has_numpy:
+            if isinstance(o, np.integer):
+                return int(o)
+            if isinstance(o, np.floating):
+                return float(o)
+            if isinstance(o, np.ndarray):
+                return o.tolist()
         if isinstance(o, (datetime, date)):
             return o.isoformat()
         return json.JSONEncoder.default(self, o)

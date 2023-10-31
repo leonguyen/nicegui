@@ -61,7 +61,7 @@ def _get_library(key: str) -> FileResponse:
     if dict_key in libraries:
         path = libraries[dict_key].path
         if is_map:
-            path = path.with_name(path.name + '.map')
+            path = path.with_name(f'{path.name}.map')
         if path.exists():
             headers = {'Cache-Control': 'public, max-age=3600'}
             return FileResponse(path, media_type='text/javascript', headers=headers)
@@ -146,8 +146,7 @@ def _on_disconnect(sid: str) -> None:
     query_bytes: bytearray = sio.get_environ(sid)['asgi.scope']['query_string']
     query = urllib.parse.parse_qs(query_bytes.decode())
     client_id = query['client_id'][0]
-    client = Client.instances.get(client_id)
-    if client:
+    if client := Client.instances.get(client_id):
         client.handle_disconnect()
 
 
@@ -161,7 +160,7 @@ def _on_event(_: str, msg: Dict) -> None:
 
 @sio.on('javascript_response')
 def _on_javascript_response(_: str, msg: Dict) -> None:
-    client = Client.instances.get(msg['client_id'])
-    if not client:
+    if client := Client.instances.get(msg['client_id']):
+        client.handle_javascript_response(msg)
+    else:
         return
-    client.handle_javascript_response(msg)

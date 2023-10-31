@@ -87,10 +87,11 @@ for key, dependency in dependencies.items():
     with tarfile.open(tgz_file) as archive:
         to_be_extracted: list[tarfile.TarInfo] = []
         for tarinfo in archive.getmembers():
-            for keep in dependency['keep']:
-                if re.match(f'^{keep}$', tarinfo.name):
-                    to_be_extracted.append(tarinfo)  # TODO: simpler?
-
+            to_be_extracted.extend(
+                tarinfo
+                for keep in dependency['keep']
+                if re.match(f'^{keep}$', tarinfo.name)
+            )
         archive.extractall(members=to_be_extracted, path=Path(tmp, key))
 
         for extracted in to_be_extracted:

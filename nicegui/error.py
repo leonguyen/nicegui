@@ -24,7 +24,7 @@ def error_content(status_code: int, exception: Union[str, Exception] = '') -> No
     else:
         message = exception.__class__.__name__
         if str(exception):
-            message += ': ' + str(exception)
+            message += f': {str(exception)}'
 
     with column().style('width: 100%; padding: 5rem 0; align-items: center; gap: 0'):
         html((Path(__file__).parent / 'static' / 'sad_face.svg').read_text()).style('width: 8rem; padding: 1.25rem 0')

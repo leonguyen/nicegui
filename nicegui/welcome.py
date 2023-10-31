@@ -23,5 +23,5 @@ async def print_message() -> None:
     urls = [(f'http://{ip}:{port}' if port != '80' else f'http://{ip}') for ip in ['localhost'] + sorted(ips)]
     core.app.urls.update(urls)
     if len(urls) >= 2:
-        urls[-1] = 'and ' + urls[-1]
+        urls[-1] = f'and {urls[-1]}'
     print(f'on {", ".join(urls)}', flush=True)

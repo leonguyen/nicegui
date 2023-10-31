@@ -37,7 +37,7 @@ def test_select_with_input(screen: Screen):
     screen.should_contain('AB')
     screen.should_not_contain('XYZ')
 
-    screen.find_by_tag('input').send_keys('ABC' + Keys.ENTER)
+    screen.find_by_tag('input').send_keys(f'ABC{Keys.ENTER}')
     screen.find_by_tag('input').click()
     screen.should_not_contain('ABC')
 
@@ -122,7 +122,7 @@ def test_add_new_values(screen:  Screen, option_dict: bool, multiple: bool, new_
 
     if new_value_mode:
         for _ in range(2):
-            screen.find_by_tag('input').send_keys(Keys.BACKSPACE + 'd')
+            screen.find_by_tag('input').send_keys(f'{Keys.BACKSPACE}d')
             screen.wait(0.5)
             screen.find_by_tag('input').click()
             screen.wait(0.5)

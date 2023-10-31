@@ -19,6 +19,8 @@ def start_monitor(app: FastAPI) -> None:
     visits = prometheus_client.Counter('nicegui_page_visits', 'Number of real page visits',
                                        ['path', 'session', 'origin'])
 
+
+
     class PrometheusMiddleware(BaseHTTPMiddleware):
 
         async def dispatch(self, request: Request, call_next: RequestResponseEndpoint) -> Response:
@@ -28,10 +30,11 @@ def start_monitor(app: FastAPI) -> None:
             if response.headers.get('x-nicegui-content') == 'page':
                 agent = request.headers.get('user-agent', 'unknown').lower()
                 # ignore monitoring, web crawlers and the like
-                if not any(s in agent for s in EXCLUDED_USER_AGENTS):
+                if all(s not in agent for s in EXCLUDED_USER_AGENTS):
                     origin_url = request.headers.get('referer', 'unknown')
                     visits.labels(request.get('path'), request.session['id'], origin_url).inc()
             return response
+
 
     if inspect.stack()[-2].filename.endswith('spawn.py'):
         prometheus_client.start_http_server(9062)

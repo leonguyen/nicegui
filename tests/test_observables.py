@@ -67,11 +67,11 @@ def test_observable_list():
     assert count == 7
     data[0] = 1
     assert count == 8
-    data[0:2] = [1, 2, 3]
+    data[:2] = [1, 2, 3]
     assert count == 9
     del data[0]
     assert count == 10
-    del data[0:1]
+    del data[:1]
     assert count == 11
     data.clear()
     assert count == 12

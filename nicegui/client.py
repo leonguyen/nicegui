@@ -233,8 +233,7 @@ class Client:
     def handle_event(self, msg: Dict) -> None:
         """Forward an event to the corresponding element."""
         with self:
-            sender = self.elements.get(msg['id'])
-            if sender:
+            if sender := self.elements.get(msg['id']):
                 msg['args'] = [None if arg is None else json.loads(arg) for arg in msg.get('args', [])]
                 if len(msg['args']) == 1:
                     msg['args'] = msg['args'][0]

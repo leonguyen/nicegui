@@ -39,9 +39,7 @@ class ObservableCollection(abc.ABC):
             return ObservableDict(data, _parent=self)
         if isinstance(data, list):
             return ObservableList(data, _parent=self)
-        if isinstance(data, set):
-            return ObservableSet(data, _parent=self)
-        return data
+        return ObservableSet(data, _parent=self) if isinstance(data, set) else data
 
 
 class ObservableDict(ObservableCollection, dict):

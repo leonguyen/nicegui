@@ -152,9 +152,9 @@ with (Path(__file__).parent / 'nicegui' / 'tailwind.py').open('w') as f:
                 f.write(f"        self.element.classes('{prefix}' + value if value else '{prefix.rstrip('''-''')}')\n")
             else:
                 f.write(f"        self.element.classes('{prefix}' + value)\n")
-            f.write(f'        return self\n')  # pylint: disable=f-string-without-interpolation
         else:
             f.write(f"    def {property_.snake_title}(self) -> Tailwind:\n")
             f.write(f'        """{property_.description}"""\n')
             f.write(f"        self.element.classes('{prefix}')\n")
-            f.write(f'        return self\n')  # pylint: disable=f-string-without-interpolation
+
+        f.write(f'        return self\n')  # pylint: disable=f-string-without-interpolation

@@ -67,21 +67,18 @@ class Select(ChoiceElement, DisableableElement, component='select.js'):
         if self.multiple:
             if e.args is None:
                 return []
-            else:
-                args = [self._values[arg['value']] if isinstance(arg, dict) else arg for arg in e.args]
-                for arg in e.args:
-                    if isinstance(arg, str):
-                        self._handle_new_value(arg)
-                return [arg for arg in args if arg in self._values]
+            args = [self._values[arg['value']] if isinstance(arg, dict) else arg for arg in e.args]
+            for arg in e.args:
+                if isinstance(arg, str):
+                    self._handle_new_value(arg)
+            return [arg for arg in args if arg in self._values]
         else:
             if e.args is None:
                 return None
-            else:
-                if isinstance(e.args, str):
-                    self._handle_new_value(e.args)
-                    return e.args if e.args in self._values else None
-                else:
-                    return self._values[e.args['value']]
+            if not isinstance(e.args, str):
+                return self._values[e.args['value']]
+            self._handle_new_value(e.args)
+            return e.args if e.args in self._values else None
 
     def _value_to_model_value(self, value: Any) -> Any:
         # pylint: disable=no-else-return
@@ -104,17 +101,20 @@ class Select(ChoiceElement, DisableableElement, component='select.js'):
     def _handle_new_value(self, value: str) -> None:
         mode = self._props['new-value-mode']
         if isinstance(self.options, list):
-            if mode == 'add':
+            if (
+                mode != 'add'
+                and mode == 'add-unique'
+                and value not in self.options
+                or mode != 'add'
+                and mode != 'add-unique'
+                and mode == 'toggle'
+                and value not in self.options
+                or mode == 'add'
+            ):
                 self.options.append(value)
-            elif mode == 'add-unique':
-                if value not in self.options:
-                    self.options.append(value)
-            elif mode == 'toggle':
-                if value in self.options:
-                    self.options.remove(value)
-                else:
-                    self.options.append(value)
-            # NOTE: self._labels and self._values are updated via self.options since they share the same references
+            elif mode != 'add-unique' and mode == 'toggle':
+                self.options.remove(value)
+                # NOTE: self._labels and self._values are updated via self.options since they share the same references
         else:
             if mode in 'add-unique':
                 if value not in self.options:
